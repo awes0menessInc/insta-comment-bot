@@ -26,12 +26,10 @@ while [[ true ]]; do
         -H 'referer: https://www.instagram.com/p/Be3hzzcAnv5/?taken-by=hubpurdue' \
         -H 'dnt: 1' \
         --data "comment_text=$comment+$line" \
-        --compressed
+        --compressed &>/dev/null
         if [ $(( $i % 5 )) -eq 0 ]; then
             sleep 200
         fi
-
-        echo
         echo $n
         echo
         sleep $r
